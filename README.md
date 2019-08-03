@@ -46,3 +46,14 @@ In order to evaluate my list, I used Movielens's relevancy scores. Movielens gen
 ## 4. The recommendation system
 
 Once I had created my final "good" bad list, I used Surprise's KNNBaseline model to create the recommendations. My final model RMSE was 1.009. Below is a sample of a recommendation as produced by the engine:
+
+Recommendations for Friday the 13th Part VII: The New Blood (1988):
+['Friday the 13th Part VIII: Jason '
+ 'Takes Manhattan (1989)',
+ 'Leatherface: Texas Chainsaw Massacre '
+ 'III (1990)',
+ 'Amityville: A New Generation (1993)',
+ 'Jaws 3-D (1983)',
+ 'Texas Chainsaw Massacre: The Next '
+ 'Generation (a.k.a. The Return of the '
+ 'Texas Chainsaw Massacre) (1994)']
