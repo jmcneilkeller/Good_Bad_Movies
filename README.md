@@ -7,7 +7,7 @@ It may be possible to identify "good" bad movies by looking at the distribution 
 
 Below is the distribution of a movie generally as good, The Godfather Part II:
 
-![Image description](link-to-image)
+![](https://github.com/jmcneilkeller/Good_Bad_Movies/blob/master/images/good_movie.png)
 
 This is Gigli, generally regarded as, well, not very good:
 
