@@ -43,7 +43,7 @@ def home():
         for i in plot_list:
             if i[0] in raw:
                 new_list.append(i)
-        return(render_template('home.html',Recommendations=new_list,Titles=lst))
+        return(render_template('home.html',Recommendations=new_list,Titles=lst, select=raw_id))
 
 
 

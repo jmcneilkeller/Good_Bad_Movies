@@ -10,11 +10,13 @@
   th   {background-color: white; font-family: "Lucida Console", Monaco, monospace;}
   legend {font-family: "Lucida Console", Monaco, monospace;}
   fieldset {padding-top: 0.35em;padding-bottom: 0.625em;}
+  h3 {font-family: "Lucida Console", Monaco, monospace; font-size: 1.25em;}
  </style>
 </head>
 <body>
 	<div class="header">
 		<h1>Best/Worst Movie Recommender</h1>
+    <h3>You've brought this upon yourself.</h3>
 	</div>
 	<div class="col-6 col-s-9">
 			<div id="Input_Area">
@@ -32,9 +34,9 @@
           </fieldset>
 			  </form>
 			</div>
-      
+
       <div class="results" align="center">
-        <h2>You've brought this upon yourself:</h2>
+        <h2> Recommendations for {{ select }}: </h2>
         <table border = 1 width= 1200>
           {% for mov, rec in Recommendations %}
             <tr>
