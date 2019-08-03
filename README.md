@@ -25,9 +25,7 @@ As you can see, The Room's rating distribution is much heavier at the tails than
 
 ## 2. The data
 
-I used data from the full Movielens dataset available here.
-
-https://grouplens.org/datasets/movielens/latest/
+I used data from the full Movielens dataset available [here.](https://grouplens.org/datasets/movielens/latest/)
 
 * The original dataset contained 27,000,000+ ratings from 58,000+ movies.
 * I removed any movie with less than 30 reviews, leaving me with a final dataset of 15,751 movies.
