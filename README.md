@@ -11,15 +11,15 @@ Below is the distribution of a movie generally as good, The Godfather Part II:
 
 This is Gigli, generally regarded as, well, not very good:
 
-BAD PL
+![](https://github.com/jmcneilkeller/Good_Bad_Movies/blob/master/images/bad_bad_movie.png)
 
 The below is Neighbors, a fairly average movie:
 
-AVG PL
+![](https://github.com/jmcneilkeller/Good_Bad_Movies/blob/master/images/normal_movie.png)
 
 And below is The Room, generally regarded as one of the "best" worst movies:
 
-GOOD/BAD
+![](https://github.com/jmcneilkeller/Good_Bad_Movies/blob/master/images/good_bad_movie.png)
 
 As you can see, The Room's rating distribution is much heavier at the tails than any of the others. The ideal "good" bad movie should be concave, with relatively high amounts of both very low and very high ratings.
 
@@ -41,10 +41,8 @@ Once I had established those features, I used Agglomerative Clustering from scik
 
 In order to evaluate my list, I used Movielens's relevancy scores. Movielens generates these scores based on how often users flag a particular movie with particular tag. In this case I used the "So bad its good" and "So bad its funny" tags. The mean relevancy tag scores for my sorted list significantly outperformed the full dataset mean scores.
 
-SCORE
+![](https://github.com/jmcneilkeller/Good_Bad_Movies/blob/master/images/relevancy_scores.png)
 
 ## 4. The recommendation system
 
 Once I had created my final "good" bad list, I used Surprise's KNNBaseline model to create the recommendations. My final model RMSE was 1.009. Below is a sample of a recommendation as produced by the engine:
-
-LAST PIC
