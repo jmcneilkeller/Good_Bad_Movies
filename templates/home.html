@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+ <style>
+  body {background-color: powderblue;}
+  h1   {color: #000000; font-size: 3.0em; font-family: "Lucida Console", Monaco, monospace;}
+  h2   {font-family: "Lucida Console", Monaco, monospace; font-size: 2.0em;}
+  td   {background-color: black; color: white; font-family: "Courier New", Courier, monospace;}
+  th   {background-color: white; font-family: "Lucida Console", Monaco, monospace;}
+  legend {font-family: "Lucida Console", Monaco, monospace;}
+  fieldset {padding-top: 0.35em;padding-bottom: 0.625em;}
+  h3 {font-family: "Lucida Console", Monaco, monospace; font-size: 1.25em;}
+ </style>
+</head>
+<body>
+	<div class="header">
+		<h1>Best/Worst Movie Recommender</h1>
+    <h3>You've brought this upon yourself.</h3>
+	</div>
+	<div class="col-6 col-s-9">
+			<div id="Input_Area">
+				<form action="http://localhost:5000/home" method="POST">
+          <fieldset>
+              <legend>Enter a movie:</legend>
+				          <input type = "text" name = "Input_Text" id="user_movie" list="movies">
+                  <datalist id="movies">
+                    {% for title in Titles %}
+                      <option value="{{ title }}">
+                    {% endfor %}
+                  </datalist>
+				          <input type = "submit" value = "Submit">
+              </label>
+          </fieldset>
+			  </form>
+			</div>
+
+      <div class="results" align="center">
+        <h2> Recommendations for {{ select }}: </h2>
+        <table border = 1 width= 1200>
+          {% for mov, rec in Recommendations %}
+            <tr>
+               <th> {{ mov }} </th>
+               <td> {{ rec }} </td>
+            </tr>
+          {% endfor %}
+        </table>
+      </div>
+  </div>
+</body>
+</html>
