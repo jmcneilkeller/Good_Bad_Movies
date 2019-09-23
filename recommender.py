@@ -5,16 +5,14 @@ from surprise import Dataset
 from surprise import Reader
 from surprise import dump
 
-rec_df = pd.read_csv('KNN_final.csv')
-rec_df.drop('Unnamed: 0',inplace=True,axis=1)
+rec_df = pd.read_csv('KNN_final.csv',index_col=0)
 preds, model = dump.load('KNNfinal_model')
 reader = Reader(rating_scale=(0.5, 5.0))
 data = Dataset.load_from_df(rec_df,reader)
 trainset = data.build_full_trainset()
 model.fit(trainset)
 
-plot_df = pd.read_csv('with_plots.csv')
-plot_df.drop('Unnamed: 0',inplace=True,axis=1)
+plot_df = pd.read_csv('with_plots.csv',index_col=0)
 
 lst = plot_df['title']
 app = Flask(__name__)
@@ -24,13 +22,13 @@ app = Flask(__name__)
 def home():
     if request.method == 'GET':
         return(render_template('home.html',Recommendations='',Titles=lst))
-    if request.method == 'POST':
+    elif request.method == 'POST':
         result = request.form
         for k,v in result.items():
             if k == 'Input_Text':
-                id = v
+                ident = v
                 break
-        inner_id = model.trainset.to_inner_iid(id)
+        inner_id = model.trainset.to_inner_iid(ident)
         neighbors = model.get_neighbors(inner_id, k=5)
         raw = [model.trainset.to_raw_iid(iid)
                        for iid in neighbors]
@@ -43,7 +41,7 @@ def home():
         for i in plot_list:
             if i[0] in raw:
                 new_list.append(i)
-        return(render_template('home.html',Recommendations=new_list,Titles=lst, select=id))
+        return(render_template('home.html',Recommendations=new_list,Titles=lst, select=ident))
 
 
 if __name__ == '__main__':
